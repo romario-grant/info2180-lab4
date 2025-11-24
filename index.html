@@ -4,19 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avengers Character Search</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS stylesheet -->
 </head>
 <body>
     <div class="container">
-        <h1>Avengers Character Search</h1>
+        <h1>AVENGERS CHARACTER SEARCH</h1>  <!-- Main page heading -->
         
         <div class="search-container">
-            <button id="searchBtn">Search</button>
+            <!-- Text input field for search queries -->
+            <p>Search by Full Name or Alias</p>
+            <input type="text" id="searchInput" placeholder="e.g. Captain America or Steve Rogers">
+            <button id="searchBtn">Search</button> <!-- Search button that triggers the AJAX request -->
         </div>
         
-        <div id="result"></div>
+        <div class="result-container"> <!-- Results section--> 
+            <h2>RESULT</h2>
+            <div id="result">
+                
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>
 </body>
 </html>
+
+
+<! -- --> 

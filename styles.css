@@ -1,4 +1,145 @@
 body {
     font-family: Arial, sans-serif;
     padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    
+    background-image: url('Avengers.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Image stays fixed while scrolling */
+}
+
+.container {
+    background-color: rgb(243, 242, 242);
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Header Section */
+
+h1 {
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 25px 20px;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #2596be;
+}
+
+/* Search Section */
+
+.search-container {
+    text-align: left;
+    padding: 30px 40px 0 40px;
+}
+
+.search-container p {
+    margin: 5px 0 20px 0;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#searchInput {
+    padding: 15px;
+    width: 400px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 5px;  /* Space between input and search button */
+}
+
+#searchBtn {
+    padding: 15px 30px;
+    background-color: #e62429;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Shows hand cursor on hover over search button */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#searchBtn:hover {
+    background-color: #c51a1f; /* Darker red on hover */
+}
+
+/* Results Section */
+
+.result-container {
+    padding: 0 40px 30px 40px;
+}
+
+.result-container h2 {
+    color: #333;
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+#result {
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+/* Superhero list styling */
+
+#result ul {
+    list-style-type: none;  /* Removes bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+#result li {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 16px;
+}
+
+#result li:hover {
+    background-color: #f0f0f0;
+}
+
+#result li:last-child {
+    border-bottom: none;
+}
+
+/* Single superhero result styling */
+
+#result h3 {
+    color: #000000;
+    margin-bottom: 8px;
+    font-size: 24px;
+    padding-bottom: 8px;
+}
+
+#result h4 {
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+#result p {
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Error message styling */
+
+#result p:only-child {
+    color: #e62429;
+    font-weight: bold; 
+    text-align: left;
+    padding: 20px;
+    font-size: 18px;
 }

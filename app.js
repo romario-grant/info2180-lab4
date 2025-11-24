@@ -1,23 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const searchButton = document.getElementById('searchButton');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchInput = document.getElementById('searchInput');
+    const resultDiv = document.getElementById('result');
     
-    searchButton.addEventListener('click', function() {
-
-        const xhr = new XMLHttpRequest(); // Creates the XMLHttpRequest object
-        xhr.open('GET', 'superheroes.php', true);
+    resultDiv.innerHTML = ''; // Start with empty result
+    
+    searchBtn.addEventListener('click', function() {
+        const query = searchInput.value.trim(); // Get search query
         
+        let url = 'superheroes.php';
+        if (query) {
+            url += '?query=' + encodeURIComponent(query);
+        }
+        
+        // Create XMLHttpRequest object
+        const xhr = new XMLHttpRequest();
+        
+        xhr.open('GET', url, true);
+
         xhr.onload = function() {
             if (xhr.status === 200) {
-                // Shows the response in an alert
-                alert(xhr.responseText);
+                // Display the response in the result div
+                resultDiv.innerHTML = xhr.responseText;
             } else {
                 // Error handling
-                alert('Error fetching superheroes');
+                resultDiv.innerHTML = 'Error fetching superheroes: ' + xhr.status;
             }
         };
-        
+
         xhr.onerror = function() {
-            alert('Request failed');
+            resultDiv.innerHTML = 'Request failed. Please check if the server is running.';
         };
         
         // Send the request
